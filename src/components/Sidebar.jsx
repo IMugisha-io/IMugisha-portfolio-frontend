@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Folder, FolderOpen, FileText, Mail } from "lucide-react";
 import { ChevronDown, ChevronUp, Menu, X } from "lucide-react";
 import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa"; 
@@ -74,15 +75,18 @@ export default function Sidebar() {
 
             {open && (
               <div className="pl-1 flex flex-col gap-1 pb-3">
-                <button className="text-gray-300 text-sm text-left hover:text-sky-400">
-                  Profile
-                </button>
-                <button className="text-gray-300 text-sm text-left hover:text-sky-400">
-                  Settings
-                </button>
-                <button className="text-gray-300 text-sm text-left hover:text-sky-400">
-                  Analytics
-                </button>
+                <Link to="/" className="text-gray-300 text-sm text-left hover:text-sky-400">
+                  Dashboard
+                </Link>
+                <Link to="/introduction" className="text-gray-300 text-sm text-left hover:text-sky-400">
+                  Introduction
+                </Link>
+                <Link to="/projects" className="text-gray-300 text-sm text-left hover:text-sky-400">
+                  Projects
+                </Link>
+                <Link to="/services" className="text-gray-300 text-sm text-left hover:text-sky-400">
+                  Services
+                </Link>
               </div>
             )}
           </div>

@@ -1,21 +1,16 @@
-import Sidebar from "../components/sidebar";
+import { Outlet } from "react-router-dom";
+import Sidebar from "../components/Sidebar";
 import TopNavbar from "../components/TopNavbar";
 
-export default function App() {
+export default function Home() {
   return (
     <div className="flex h-screen">
-      {/* Sidebar */}
       <Sidebar />
-      <TopNavbar/>
-      <div className="max-w-2xl">
-      <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-        Software designer, founder, and amateur astronaut.</h1>
-
-      </div>
-
-       
-
+      <TopNavbar />
       
+      <div className="ml-22 mt-8 p-8 h-[calc(100vh-2rem)] overflow-y-auto">
+        <Outlet />
+      </div>
     </div>
   );
 }
